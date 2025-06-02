@@ -13,8 +13,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
 
 WORKDIR /app
 
-# KORREKTE FreeCAD AppImage URL
-RUN wget -O FreeCAD.AppImage https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/0.21.2/FreeCAD-0.21.2-Linux-x86_64.AppImage && \
+# ✅ FreeCAD AppImage mit KORREKTER URL (unterstrich statt Bindestrich!)
+RUN wget -O FreeCAD.AppImage https://github.com/FreeCAD/FreeCAD-Bundle/releases/download/0.21.2/FreeCAD_0.21.2-Linux-x86_64.AppImage && \
     chmod +x FreeCAD.AppImage
 
 COPY . .
