@@ -19,7 +19,7 @@ app.post('/upload-stp', upload.single('file'), (req, res) => {
     const outputFilename = req.file.originalname.replace(/\.(stp|step)$/i, '.glb');
     const outputPath = path.join(__dirname, 'converted', outputFilename);
 
-    const command = `FreeCADCmd converters/convertStepToGlb.py "${inputPath}" "${outputPath}"`;
+    const command = `./FreeCAD.AppImage --console converters/convertStepToGlb.py "${inputPath}" "${outputPath}"`;
 
     exec(command, (error, stdout, stderr) => {
         if (error) {
